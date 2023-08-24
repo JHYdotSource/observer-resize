@@ -89,16 +89,10 @@ body {
     height: 100%;
 }
 #container_cq {
-    container: ccq / size;
+    container: ccq / inline-size;
     background-color: transparent;
 }
 @media (width > 768px) {
-    @container ccq (height > 700px) {
-        .flex__container--inner {
-            background-color: grey;
-            color: white;
-        }
-    }
     @container ccq (width >= 576px) {
         .flex__container--inner {
             display: flex;

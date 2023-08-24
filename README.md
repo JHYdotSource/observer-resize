@@ -47,6 +47,7 @@ Container Queries are quite flexible and easy to use.
 - Browser Support even on modern browsers
 - No knowledge of parent element
 - No events/functions, class or attribute changes possible
+- Using block-size sometimes still leads to unexpected bugs
 
 #### Pro
 - Easy to use and flexible nesting with media queries
