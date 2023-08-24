@@ -21,6 +21,7 @@ Most data needs to be gained manually.
 - Highly compatible with any browser old or new
 - Load or unload content
 - Can be removed if not needed anymore
+- Use console logs to track state
 
 ### ResizeObserver
 The ResizeObserver is relatively new and quite flexible.
@@ -37,6 +38,7 @@ It provides a lot of precize data in it's callback function.
 - Lots of data from callback function
 - Flexible in Handling inline and block size
 - Can be removed if not needed anymore
+- Use console logs to track state
 
 ### Container Queries
 Container Queries are quite flexible and easy to use.
@@ -52,6 +54,7 @@ Container Queries are quite flexible and easy to use.
 - Flexible/Resuable
 - Less Code no if/else chaining nessecary
 - Flexible handling of inline and block size
+- Use browser developer tools to track state
 
 ## Conclusion
 Each of the techniques has its advantages and disadvantages. 
