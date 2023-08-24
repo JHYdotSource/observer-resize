@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <h1 class="main__heading">Resize Event Listener vs. Resize Observer vs. Container Queries</h1>
+
+    <div class="flex__wrapper">
+        <div id="container_el" class="flex__container">
+            <div class="flex__container--image">
+                <img src="https://picsum.photos/id/883/1024/600" alt="Test Image">
+            </div>
+            <div class="flex__container--content">
+                <h3 class="flex__container--heading">Event EventListener</h3>
+                <p class="flex__container--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Fugiat itaque inventore corporis debitis, aliquam doloribus omnis, 
+                    libero cumque quae consequuntur repellendus dolor tempore vero, 
+                    voluptates excepturi ullam facere ipsa iste.</p>
+                    <h4>Vorteile/Nachteile</h4>
+                    <ul class="flex__container--list">
+                        <li class="flex__container--list-item">Nur für das <i>window</i> Element verfügbar</li>
+                        <li class="flex__container--list-item">Kein direkter bezug zum Element das sich verändert</li>
+                        <li class="flex__container--list-item">Das Element kann sich verändern ohne den EventListener zu triggern</li>
+                        <li class="flex__container--list-item">Wird nicht inital getriggert (zusätzliches JS notwendig)</li>
+                        <li class="flex__container--list-item">Klassen/Attribute hinzufügen/entfernen</li>
+                        <li class="flex__container--list-item">Markup verändern</li>
+                        <li class="flex__container--list-item">Auch für alte Browser verfügbar</li>
+                        <li class="flex__container--list-item">Nicht einfach wiederzuverwenden</li>
+                    </ul>
+                <button class="flex__container--button">Click me</button>  
+            </div>
+        </div>
+        <div id="container_ro" class="flex__container">
+            <div class="flex__container--image">
+                <img src="https://picsum.photos/id/883/1024/600" alt="Test Image">
+            </div>
+            <div class="flex__container--content">
+                <h3 class="flex__container--heading">Resize Observer</h3>
+                <p class="flex__container--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Fugiat itaque inventore corporis debitis, aliquam doloribus omnis, 
+                    libero cumque quae consequuntur repellendus dolor tempore vero, 
+                    voluptates excepturi ullam facere ipsa iste.</p>
+                    <h4>Vorteile/Nachteile</h4>
+                    <ul class="flex__container--list">
+                        <li class="flex__container--list-item">Wird initial getriggert auch ohne Resize</li>
+                        <li class="flex__container--list-item">Browser Support seit 2020</li>
+                        <li class="flex__container--list-item">Klassen/Attribute hinzufügen/entfernen</li>
+                        <li class="flex__container--list-item">Markup verändern</li>
+                        <li class="flex__container--list-item">Einfache wiederverwendung für andere Elemente</li>
+                        <li class="flex__container--list-item">Inline Size und Block Size</li>
+                    </ul>
+                <button class="flex__container--button">Click me</button>  
+            </div>
+        </div>
+        <div id="container_cq" class="flex__container">
+            <div class="flex__container--inner">
+                <div class="flex__container--image">
+                    <img src="https://picsum.photos/id/883/1024/600" alt="Test Image">
+                </div>
+                <div class="flex__container--content">
+                    <h3 class="flex__container--heading">Container Queries</h3>
+                    <p class="flex__container--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Fugiat itaque inventore corporis debitis, aliquam doloribus omnis, 
+                        libero cumque quae consequuntur repellendus dolor tempore vero, 
+                        voluptates excepturi ullam facere ipsa iste.</p>
+                    <h4>Vorteile/Nachteile</h4>
+                    <ul class="flex__container--list">
+                        <li class="flex__container--list-item">Kein JS notwendig</li>
+                        <li class="flex__container--list-item">Wird nur von modernen Browsern unterstützt</li>
+                        <li class="flex__container--list-item">Kein Zugriff auf Parent</li>
+                        <li class="flex__container--list-item">Markup bleibt gleich</li>
+                        <li class="flex__container--list-item">Klassen/Attribute bleiben gleich</li>
+                        <li class="flex__container--list-item">Einfaches verschachteln von Media-Queries und Container-Queries</li>
+                        <li class="flex__container--list-item">Einfache wiederverwendung bei beliebig vielen Elementen</li>
+                        <li class="flex__container--list-item">Inline Size und Block Size oder nur Inline Size</li>
+                    </ul>
+                    <button class="flex__container--button">Click me</button>  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

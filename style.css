@@ -1,0 +1,129 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.main__heading {
+    text-align: center;
+}
+/* Basic css */
+.flex__wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+}
+@media (width <= 768px) {
+    .flex__wrapper {
+        display: grid;
+    }
+}
+.flex__container {
+    flex: 1 1 0px;
+    background-color: rgb(245, 245, 245);
+    transition: background-color .5s ease;
+}
+.flex__container--image > img {
+    max-width: 100%;
+    transition: border-radius .5s ease;
+}
+.flex__container--content {
+    padding: 16px;
+}
+.flex__container--list {
+    padding: 18px;
+}
+.flex__container--list-item {
+    padding-left: 8px;
+    line-height: 1.2;
+}
+.flex__container--list-item::marker {
+    content: "■";
+    display: block;
+    font-size: 1.2rem;
+    padding-right: 5px;
+    color: rgb(52, 140, 218);
+}
+.flex__container--button {
+    border: 0;
+    background-color: rgb(52, 140, 218);
+    padding: 15px 30px;
+    font-weight: bold;
+    color: rgb(255, 255 ,255);
+}
+
+/* JS Classes specific code*/
+.flex__it {
+    display: flex;
+    background-color: transparent;
+}
+.flex__it > .flex__container--image {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.flex__it > .flex__container--image > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 16px;
+    transition: border-radius .5s ease;
+}
+.flex__it .flex__container--list-item::marker {
+    content: "●";
+    display: block;
+    font-size: 1.4rem;
+}
+.flex__it .flex__container--button {
+    border-radius: 16px;
+}
+.small__size > .flex__container--content > .flex__container--button {
+    width: 100%;
+}
+
+/* Container Queries*/
+.flex__container--inner {
+    background-color: rgb(245, 245, 245);
+    transition: background-color .5s ease;
+    height: 100%;
+}
+#container_cq {
+    container: ccq / size;
+    background-color: transparent;
+}
+@media (width > 768px) {
+    @container ccq (height > 700px) {
+        .flex__container--inner {
+            background-color: grey;
+            color: white;
+        }
+    }
+    @container ccq (width >= 576px) {
+        .flex__container--inner {
+            display: flex;
+            background-color: transparent;
+        }
+        .flex__container--image > img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            align-self: center;
+            border-radius: 16px;
+        }
+        .flex__container--list-item::marker {
+            content: "●";
+            display: block;
+            font-size: 1.4rem;
+        }
+        .flex__container--button {
+            border-radius: 16px;
+        }
+    }
+    @container ccq (width < 460px) {
+        .flex__container--button {
+            width: 100%;
+        }
+    }
+}
