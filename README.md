@@ -12,5 +12,7 @@ The EventListener is the least flexible function to compute size changes
 - Trigger functions
 - Change markup and attributes
 - Highly compatible with any browser old or new
+- Load or unload content
+- Can be removed
 
 https://jhydotsource.github.io/observer-resize/
