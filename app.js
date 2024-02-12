@@ -10,6 +10,7 @@
     const co_el = document.querySelector(selectors.container_el);
     if (co_el) {
         window.addEventListener("resize", (event) => {
+            console.log("Resize Event Listener Fired");
             if (event.target.innerWidth > 768) {
                 if (co_el.clientWidth >= 576) {
                     co_el.classList.toggle("flex__it", true);
@@ -31,6 +32,7 @@
     const co_ro = document.querySelector(selectors.container_ro);
     if (co_ro) {
         const resizeObserverCallback = (entries) => {
+            console.log("Resize Observer Fired");
             for (const entry of entries) {
                 const inlineSize = entry.borderBoxSize[0].inlineSize;
                 const blockSize = entry.borderBoxSize[0].blockSize
