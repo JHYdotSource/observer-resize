@@ -70,6 +70,12 @@ body {
     border-radius: 16px;
     transition: border-radius .5s ease;
 }
+#container_el > .flex__container--image > img {
+    object-position: left;
+}
+#container_cq > .flex__container--inner > .flex__container--image > img {
+    object-position: 90%;
+}
 .flex__it .flex__container--list-item::marker {
     content: "●";
     display: block;
