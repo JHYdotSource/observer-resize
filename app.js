@@ -3,27 +3,31 @@
 
     const selectors = {
         'container_el': '#container_el',
-        'container_ro': '#container_ro'
+        'container_ro': '#container_ro',
+        'container_cq': '#container_cq'
+    }
+
+    // Named function to remove later
+    const elFunc = (event) => {
+        console.log("Resize Event Listener Fired");
+        if (event.target.innerWidth > 768) {
+            if (co_el.clientWidth >= 576) {
+                co_el.classList.toggle("flex__it", true);
+            } else {
+                co_el.classList.toggle("flex__it", false);
+            }
+        }
+        if (co_el.clientWidth < 460) {
+            co_el.classList.toggle("small__size", true);
+        } else {
+            co_el.classList.toggle("small__size", false);
+        }
     }
 
     // Event Listener
     const co_el = document.querySelector(selectors.container_el);
     if (co_el) {
-        window.addEventListener("resize", (event) => {
-            console.log("Resize Event Listener Fired");
-            if (event.target.innerWidth > 768) {
-                if (co_el.clientWidth >= 576) {
-                    co_el.classList.toggle("flex__it", true);
-                } else {
-                    co_el.classList.toggle("flex__it", false);
-                }
-            }
-            if (co_el.clientWidth < 460) {
-                co_el.classList.toggle("small__size", true);
-            } else {
-                co_el.classList.toggle("small__size", false);
-            }
-        });
+        window.addEventListener("resize", elFunc);
         const resizeEvent = new Event("resize");
         window.dispatchEvent(resizeEvent);
     }
@@ -53,6 +57,34 @@
         }
         const resizeObserver = new ResizeObserver(resizeObserverCallback);
         resizeObserver.observe(co_ro);
+    }
+
+    // Container Queries
+    const co_cq = document.querySelector(selectors.container_cq);
+
+    // Remove Containers
+    const remove__cq__btn = document.querySelector('#remove__cq');
+    if (remove__cq__btn) {
+        remove__cq__btn.addEventListener('click', () => {
+            if (co_cq) co_cq.remove();
+        });
+    }
+
+    const remove__ro__btn = document.querySelector('#remove__ro');
+    if (remove__ro__btn) {
+        remove__ro__btn.addEventListener('click', () => {
+            if (co_ro) co_ro.remove();
+        });
+    }
+
+    const remove__el__btn = document.querySelector('#remove__el');
+    if (remove__el__btn) {
+        remove__el__btn.addEventListener('click', () => {
+            if (co_el) {
+                co_el.remove();
+                window.removeEventListener('resize', elFunc);
+            };
+        });
     }
 
 })();
